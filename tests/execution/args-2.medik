@@ -1,0 +1,19 @@
+machine Args {
+  init state Foo {
+    entry (a, c) {
+      var b;
+      c = a;
+      b = c;
+      print(c); // should print1
+    }
+  }
+}
+
+init machine CreateArgs {
+  init state Start {
+    entry {
+      new Args(1, 2);
+    }
+  }
+}
+

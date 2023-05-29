@@ -1,0 +1,6 @@
+[submodule "ext/blockchain-k-plugin"]
+	path = ext/blockchain-k-plugin
+	url = https://github.com/fmcad-78/blockchain-k-plugin.git
+[submodule "ext/k"]
+	path = ext/k
+	url = https://github.com/runtimeverification/k

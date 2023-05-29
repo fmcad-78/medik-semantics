@@ -1,0 +1,25 @@
+machine Receiver {
+  init state Start {
+    entry {
+      print("A");
+    }
+    on eFoo do {
+      print("B");
+    }
+  }
+}
+init machine Driver {
+  init state Start {
+    entry {
+      var receiver = new Receiver();
+      send receiver, eFoo;
+      goto PostStart;
+    }
+  }
+
+  state PostStart {
+    entry {
+      print("C");
+    }
+  }
+}

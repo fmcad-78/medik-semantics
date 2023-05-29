@@ -1,0 +1,30 @@
+machine Indirect {
+  var x;
+  init state Foo {
+    entry(b) {
+      x = b;
+      broadcast InitDone;
+    }
+  }
+}
+
+machine Direct {
+  var x;
+  init state Foo {
+    entry(a) {
+      x = new Indirect(a + 1);
+    }
+  }
+}
+
+init machine Driver receives InitDone {
+  var obj;
+  init state Create {
+    entry {
+      obj = new Direct(2);
+    }
+    on InitDone do {
+      print(obj.x.x); // should print 3
+    }
+  }
+}

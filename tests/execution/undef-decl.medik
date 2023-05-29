@@ -1,0 +1,8 @@
+init machine UndefDecl {
+  init state entryPoint {
+    entry {
+      var a;
+      print(a);
+    }
+  }
+}

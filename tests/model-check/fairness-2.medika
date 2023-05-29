@@ -1,0 +1,7 @@
+machine A {
+  init state Start {
+    on eFoo do {
+      print("A");
+    }
+  }
+}

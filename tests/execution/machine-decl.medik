@@ -1,0 +1,20 @@
+machine A {
+  var a;
+  init state Foo {
+    entry  {
+      a = 1;
+      print(a);
+    }
+  }
+}
+
+init machine B {
+  vars a, b;
+  init state Bar {
+    vars c, d;
+    entry {
+      new A(); // should result in 1 printed
+    }
+  }
+}
+
