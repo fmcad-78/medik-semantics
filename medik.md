@@ -1134,8 +1134,7 @@ source at runtime.
        </inBuffer>
        <executorAvailable> true => false </executorAvailable>
        <epoch> Epoch </epoch>
-   requires Scheduled <= Epoch
-
+   requires Scheduled <=Int Epoch
 ```
 
 When model checking, a ghost machine is expected to receive and respond to the
